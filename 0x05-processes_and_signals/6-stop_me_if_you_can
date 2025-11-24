@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-# Stops the 4-to_infinity_and_beyond process without using kill or killall
+# Infinite loop that handles SIGTERM by displaying "I am invincible!!!"
 
-# ShellCheck disable for SC2046
-# shellcheck disable=SC2046
-pkill -f 4-to_infinity_and_beyond
+# Handle SIGTERM
+trap 'echo "I am invincible!!!"' SIGTERM
+
+# Infinite loop
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
