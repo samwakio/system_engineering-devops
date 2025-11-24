@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-kill "$(pgrep -f 7-highlander)"
+# Stops the 7-highlander process by sending SIGTERM
+
+kill -TERM $(pgrep -f 7-highlander)
