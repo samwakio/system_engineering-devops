@@ -2,7 +2,7 @@
 # Infinite loop that handles SIGTERM by displaying "I am invincible!!!"
 
 # Handle SIGTERM
-trap 'echo "I am invincible!!!"' SIGTERM
+trap 'echo "I am invincible!!!" >&2' SIGTERM
 
 # Infinite loop
 while true; do
