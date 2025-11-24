@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-# Infinite loop that handles SIGTERM by displaying "I am invincible!!!"
+# Stops the 4-to_infinity_and_beyond process without using kill or killall
 
-# Handle SIGTERM
-trap 'echo "I am invincible!!!" >&2' SIGTERM
-
-# Infinite loop
-while true; do
-    echo "To infinity and beyond"
-    sleep 2
+# Find PID(s) of the running script
+for pid in $(ps -ef | grep '4-to_infinity_and_beyond' | grep -v grep | awk '{print $2}'); do
+    # Send SIGTERM using built-in kill
+    kill "$pid"
 done
