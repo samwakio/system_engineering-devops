@@ -1,2 +1,4 @@
 #!/bin/bash
-find . -mindepth 1 -maxdepth 1 -type d -exec chmod a+x {} \;
+for item in ./*; do
+    [ -d "$item" ] && chmod a+x "$item"
+done
