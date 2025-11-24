@@ -1,4 +1,3 @@
 #!/bin/bash
-for item in ./*; do
-    [ -d "$item" ] && chmod a+x "$item"
-done
+find . -type d -exec chmod a+x {} \-
+
